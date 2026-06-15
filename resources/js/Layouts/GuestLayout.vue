@@ -10,30 +10,25 @@ onMounted(()=>{
 </script>
 
 <template>
-    <div
-        class="flex min-h-screen flex-col items-center bg-white pt-6 justify-center sm:pt-0"
-    >
-        <!-- <div>
-            <Link href="/">
-                <ApplicationLogo class="h-20 w-20 fill-current text-gray-500" />
-            </Link>
-        </div> -->
-
-        <div
-            class="mt-6 w-full overflow-hidden shadow-md sm:max-w-md sm:rounded-lg grid grid-cols-1 md:grid-cols-2 md:max-w-4xl"
-        >
-            <div class="content-end relative">
-                <img src="/assets/login.png" class="hidden md:block">
-                <Transition name="slide-b">
-                    <img v-if="mobile" src="/assets/login2.png" alt="" class="md:hidden max-w-64 mx-auto translate-y-3">
-                </Transition>
+    <div class="flex min-h-screen flex-col items-center gradient-bg justify-center sm:pt-0">
+        <div class="w-full overflow-hidden shadow-md sm:max-w-md sm:rounded-xl grid grid-cols-1 md:grid-cols-2 md:max-w-6xl bg-white">
+            <div class="bg-slate-200 p-8">
+                <img src="/assets/login/laptop.png" class="m-auto">
+                <h2 class="text-3xl font-bold text-slate-800 text-center font-second">
+                    Seamless Connectivity
+                </h2>
+                <p class="text-slate-500 text-center font-primary">
+                    Experience the future of data synchronization across all your
+                    professional devices with our unified platform.
+                </p>
             </div>
-            <div class="bg-slate-100">
+            <div class="bg-white p-8">
                 <slot />
             </div>
         </div>
     </div>
 </template>
+
 
 <style scoped>
 .slide-b-enter-active {
@@ -48,5 +43,13 @@ onMounted(()=>{
 .slide-b-leave-to {
   transform: translateY(-40px);
   opacity: 0;
+}
+.gradient-bg {
+    background: linear-gradient(
+        200deg,
+        #dcc1f8,
+        #FFFFFF,
+        #dcc1f8
+    );
 }
 </style>

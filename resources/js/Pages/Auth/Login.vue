@@ -46,12 +46,15 @@ onMounted(()=>{
         <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
             {{ status }}
         </div>
-        <div class="px-5 py-7">
+        <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-500 font-bold text-white">
+            A
+        </div>
+        <div class="my-5">
+            <h2 class="text-2xl md:text-4xl font-title font-bold">Selamat Datang</h2>
+            <p class="my-3 font-second text-slate-500 text-sm">Masuk ke dashboard dengan akun anda.</p>
+        </div>
+        <div class=" md:mt-24">
             <form @submit.prevent="submit">
-                <Transition name="bounce">
-                    <h2 v-if="bounce" class="text-2xl font-bold mb-9 text-center text-gray-800">Sign Up</h2>
-                </Transition>
-
                 <Transition name="slide-b">
                     <div v-if="btn">
                         <div class="flex items-center my-2 border bg-indigo-500/5 border-gray-500/10 rounded gap-1 pl-2">
@@ -93,16 +96,13 @@ onMounted(()=>{
                     </div>
                 </Transition>
 
-                <div class="mt-4 block">
+                <div class="mt-4 flex justify-between">
                     <label class="flex items-center">
                         <Checkbox name="remember" v-model:checked="form.remember" />
                         <span class="ms-2 text-sm text-gray-600"
                             >Remember me</span
                         >
                     </label>
-                </div>
-
-                <div class="mt-4 flex items-center justify-between">
                     <Link
                         v-if="canResetPassword"
                         :href="route('password.request')"
@@ -110,14 +110,12 @@ onMounted(()=>{
                     >
                         Forgot your password?
                     </Link>
+                </div>
 
-                    <PrimaryButton
-                        class="max-w-max mb-3 bg-indigo-500 hover:bg-indigo-600 transition-all active:scale-95 py-2.5 rounded text-white font-medium"
-                        :class="{ 'opacity-25': form.processing }"
-                        :disabled="form.processing"
-                    >
-                        Log in
-                    </PrimaryButton>
+                <div class="mt-4 flex items-center justify-between">
+                    <button type="submit" :class="{ 'opacity-25': form.processing }" :disabled="form.processing" class="text-center login-bg w-full p-2 rounded-lg shadow-lg text-white hover:from-indigo-500 hover:bg-sky-300">
+                        Masuk
+                    </button>
                 </div>
             </form>
         </div>
@@ -186,5 +184,20 @@ onMounted(()=>{
 .slide-t-leave-to {
   transform: translateY(-40px);
   opacity: 0;
+}
+
+.login-bg {
+    background: linear-gradient(
+        100deg,
+        #A855F7,
+        #6366F1
+    );
+}
+.login-bg2 {
+    background: linear-gradient(
+        100deg,
+        #6366F1,
+        #A855F7
+    );
 }
 </style>

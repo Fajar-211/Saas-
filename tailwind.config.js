@@ -15,6 +15,9 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                title: ['Roboto Slab', 'serif'],
+                primary: ['Inconsolata', 'monospace'],
+                second: ['Inter', 'sans-serif']
             },
         },
     },

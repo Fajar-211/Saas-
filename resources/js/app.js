@@ -5,24 +5,45 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+import { createPinia } from 'pinia'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
+const pinia = createPinia();
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 window.axios = axios;
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
+
     resolve: (name) =>
         resolvePageComponent(
             `./Pages/${name}.vue`,
             import.meta.glob('./Pages/**/*.vue'),
         ),
+
     setup({ el, App, props, plugin }) {
-        return createApp({ render: () => h(App, props) })
+        const app = createApp({
+            render: () => h(App, props),
+        });
+
+        app
             .use(plugin)
             .use(ZiggyVue)
+            .use(pinia)
             .mount(el);
+
+        setTimeout(() => {
+            AOS.init({
+                duration: 800,
+                once: true,
+            });
+        }, 100);
+
+        return app;
     },
+
     progress: {
         color: '#4B5563',
     },

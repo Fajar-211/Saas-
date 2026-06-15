@@ -16,8 +16,10 @@ return Application::configure(basePath: dirname(__DIR__))
             \App\Http\Middleware\HandleInertiaRequests::class,
             \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
         ]);
-
         $middleware->statefulApi();
+        $middleware->alias([
+            'super_admin' => \App\Http\Middleware\superadmin::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
