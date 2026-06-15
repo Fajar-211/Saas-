@@ -11,7 +11,7 @@ const toggle = () => {
 </script>
 
 <template>
-    <nav class="flex items-center justify-between fixed z-50 top-0 w-full px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-slate-200 bg-white/40 backdrop-blur">
+    <nav class="flex items-center justify-between fixed z-50 top-0 w-full px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-slate-200 bg-white/40 backdrop-blur-sm">
         <a href="/">
             <img class="h-9 md:h-9.5 w-auto shrink-0" src="/assets/logo.svg" alt="Logo" width="140" height="40">
         </a>

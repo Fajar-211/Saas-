@@ -43,7 +43,7 @@ const steps = [
 </script>
 
 <template>
-    <section id="cara-kerja" class="py-24 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
+    <section id="cara-kerja" class="py-24 bg-linear-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
         <div class="absolute top-0 left-1/4 w-80 h-80 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"/>
         <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-sky-600/20 rounded-full blur-3xl pointer-events-none"/>
         <div class="relative max-w-7xl mx-auto px-6">
@@ -63,12 +63,12 @@ const steps = [
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div v-for="(step, i) in steps" :key="step.num" class="relative group" data-aos="zoom-in-up" :data-aos-duration="step.duration">
-                    <div v-if="i < steps.length - 1" class="hidden lg:block absolute top-10 left-full w-full h-px bg-gradient-to-r from-white/20 to-transparent z-0 -translate-x-1/2"/>
-                    <div class="relative z-10 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all hover:border-white/20 hover:-translate-y-1">
+                    <div v-if="i < steps.length - 1" class="hidden lg:block absolute top-10 left-full w-full h-px bg-linear-to-r from-white/20 to-transparent z-0 -translate-x-1/2"/>
+                    <div class="relative z-10 bg-white/5 backdrop-blur-xs border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all hover:border-white/20 hover:-translate-y-1">
                         <span class="text-white/20 text-[2.5rem] font-black leading-none block mb-3">
                             {{ step.num }}
                         </span>
-                        <div :class="[ 'w-12 h-12 rounded-xl bg-gradient-to-br flex items-center justify-center text-white mb-4 shadow-lg', step.color]">
+                        <div :class="[ 'w-12 h-12 rounded-xl bg-linear-to-br flex items-center justify-center text-white mb-4 shadow-lg', step.color]">
                             <component :is="step.icon" class="w-6 h-6"/>
                         </div>
                         <h3 class="text-white text-base font-bold mb-2">

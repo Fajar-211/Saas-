@@ -16,6 +16,5 @@ import { Link, usePage } from '@inertiajs/vue3';
                 </p>
             </div>
         </div>
-        
     </div>
 </template>

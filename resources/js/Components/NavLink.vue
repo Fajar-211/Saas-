@@ -14,13 +14,13 @@ const props = defineProps({
 
 const classes = computed(() =>
     props.active
-        ? 'inline-flex items-center p-2 text-sm md:text-lg font-medium leading-5 text-gray-900 bg-slate-100 rounded-md focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out'
-        : 'inline-flex items-center p-2 text-sm md:text-lg font-medium leading-5 text-gray-900 bg-white hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out',
+        ? 'inline-flex items-center p-2 text-sm md:text-lg font-medium leading-5 text-gray-900 bg-slate-100 rounded-md focus:outline-hidden focus:border-indigo-700 transition duration-150 ease-in-out'
+        : 'inline-flex items-center p-2 text-sm md:text-lg font-medium leading-5 text-gray-900 bg-white hover:text-gray-700 hover:border-gray-300 focus:outline-hidden focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out',
 );
 </script>
 
 <template>
-    <Link :href="href" :class="[classes, 'hover:scale-105 transition-all active:scale-90 max-w-max max-h-max outline-none border-0']">
+    <Link :href="href" :class="[classes, 'hover:scale-105 transition-all active:scale-90 max-w-max max-h-max outline-hidden border-0']">
         <slot />
     </Link>
 </template>

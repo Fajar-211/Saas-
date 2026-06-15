@@ -39,7 +39,7 @@ const submit = async () => {
                     </InputLabel>
                     <TextInput
                         type="text"
-                        class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                        class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-xs focus:border-indigo-500 focus:ring-indigo-500"
                         v-model="form.first_name"
                         autocomplete="firstname"
                         
@@ -54,7 +54,7 @@ const submit = async () => {
                     </InputLabel>
                     <TextInput
                         type="text"
-                        class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                        class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-xs focus:border-indigo-500 focus:ring-indigo-500"
                         v-model="form.last_name"
                         autocomplete="lastname"
                         placeholder="Enter your last name"
@@ -66,7 +66,7 @@ const submit = async () => {
                     <InputLabel>
                         Gender
                     </InputLabel>
-                    <select class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" v-model="form.gender">
+                    <select class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-xs focus:border-indigo-500 focus:ring-indigo-500" v-model="form.gender">
                         <option value="" disabled>Select your gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -81,7 +81,7 @@ const submit = async () => {
                     <TextInput
                         type="date"
                         v-model="form.date_of_birth"
-                        class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                        class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-xs focus:border-indigo-500 focus:ring-indigo-500"
                     />
                     <InputError class="mt-2" :message="errors?.date_of_birth?.[0]" />
                 </div>
@@ -94,7 +94,7 @@ const submit = async () => {
                     </InputLabel>
                     <TextInput
                         type="text"
-                        class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                        class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-xs focus:border-indigo-500 focus:ring-indigo-500"
                         v-model="form.middle_name"
                         autocomplete="middlename"
                         placeholder="Enter your middle name"
@@ -114,7 +114,7 @@ const submit = async () => {
                         </div>
                         <TextInput
                             type="tel"
-                            class="my-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                            class="my-1 block w-full rounded-md border-gray-300 shadow-xs focus:border-indigo-500 focus:ring-indigo-500"
                             v-model="form.phone"
                             autocomplete="phone"
                             placeholder="Enter your phone number"
@@ -127,7 +127,7 @@ const submit = async () => {
                     <InputLabel>
                         Address
                     </InputLabel>
-                    <textarea class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" v-model="form.address" placeholder="Enter your address"></textarea>
+                    <textarea class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-xs focus:border-indigo-500 focus:ring-indigo-500" v-model="form.address" placeholder="Enter your address"></textarea>
                     <InputError class="mt-2" :message="errors?.address?.[0]" />
                 </div>
             </div>

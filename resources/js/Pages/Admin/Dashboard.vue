@@ -12,10 +12,10 @@ const header = 'Dashboard Admin';
     <AuthenticatedLayout>
         <Header :text="header" />
 
-        <div class="py-12">
+        <div class="py-8">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div
-                    class="overflow-hidden bg-white shadow-sm sm:rounded-lg"
+                    class="overflow-hidden bg-white shadow-xs sm:rounded-lg"
                 >
                     <div class="p-6 text-gray-900">
                         You're logged in!

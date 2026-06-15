@@ -75,7 +75,7 @@ const extras = [
                 <div class="grid lg:grid-cols-2 gap-10 items-center">
                     <div data-aos="zoom-in-up" class="space-y-6">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white shadow-lg">
+                            <div class="w-12 h-12 rounded-xl bg-linear-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white shadow-lg">
                                 <component :is="CalendarDays" class="w-6 h-6" />
                             </div>
                             <span class="px-3 py-1 rounded-full text-sm font-semibold font-second bg-indigo-100 text-indigo-700">
@@ -110,7 +110,7 @@ const extras = [
                 <div class="grid lg:grid-cols-2 gap-10 items-center">
                     <div data-aos="zoom-in-up" class="space-y-6 md:hidden">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center text-white shadow-lg">
+                            <div class="w-12 h-12 rounded-xl bg-linear-to-br from-sky-500 to-sky-600 flex items-center justify-center text-white shadow-lg">
                                 <component :is="Users" class="w-6 h-6" />
                             </div>
                             <span class="px-3 py-1 rounded-full text-sm font-semibold font-second bg-sky-100 text-sky-700">
@@ -143,7 +143,7 @@ const extras = [
                     </div>
                     <div data-aos="zoom-in-up" class="space-y-6 hidden md:block">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center text-white shadow-lg">
+                            <div class="w-12 h-12 rounded-xl bg-linear-to-br from-sky-500 to-sky-600 flex items-center justify-center text-white shadow-lg">
                                 <component :is="Users" class="w-6 h-6" />
                             </div>
                             <span class="px-3 py-1 rounded-full text-sm font-semibold font-second bg-sky-100 text-sky-700">
@@ -175,7 +175,7 @@ const extras = [
                 <div class="grid lg:grid-cols-2 gap-10 items-center">
                     <div data-aos="zoom-in-up" class="space-y-6">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-white shadow-lg">
+                            <div class="w-12 h-12 rounded-xl bg-linear-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-white shadow-lg">
                                 <component :is="FileBarChart2" class="w-6 h-6" />
                             </div>
                             <span class="px-3 py-1 rounded-full text-sm font-semibold font-second bg-emerald-100 text-emerald-700">

@@ -90,7 +90,7 @@ const initials = (name) => {
                     >
                         <div
                             :class="[
-                                'mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br',
+                                'mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br',
                                 item.color
                             ]"
                         >
@@ -112,7 +112,7 @@ const initials = (name) => {
 
                 <div class="overflow-hidden rounded-xl border border-slate-100">
 
-                    <div class="flex items-center justify-between bg-gradient-to-r from-indigo-600 to-sky-500 px-4 py-2.5">
+                    <div class="flex items-center justify-between bg-linear-to-r from-indigo-600 to-sky-500 px-4 py-2.5">
                         <span class="text-sm font-semibold text-white">
                             Jadwal Juni 2025
                         </span>
@@ -133,7 +133,7 @@ const initials = (name) => {
                             class="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50"
                         >
                             <div
-                                class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-indigo-400 to-sky-500 text-xs font-bold text-white"
+                                class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-indigo-400 to-sky-500 text-xs font-bold text-white"
                             >
                                 {{ initials(employee.name) }}
                             </div>
@@ -173,7 +173,7 @@ const initials = (name) => {
                         </p>
 
                         <div class="mt-1.5 h-1.5 overflow-hidden rounded-full bg-indigo-200">
-                            <div class="h-full w-4/5 rounded-full bg-gradient-to-r from-indigo-500 to-sky-400"></div>
+                            <div class="h-full w-4/5 rounded-full bg-linear-to-r from-indigo-500 to-sky-400"></div>
                         </div>
                     </div>
 
@@ -200,7 +200,7 @@ const initials = (name) => {
         </div>
 
         <div class="absolute -bottom-4 -left-4 flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-lg">
-            <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500">
+            <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-sky-500 to-indigo-500">
                 <TrendingUp class="h-5 w-5 text-white" />
             </div>
 

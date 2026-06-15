@@ -28,7 +28,7 @@ defineProps({
         <Header :text="header" />
         <main class="flex-1 p-4 md:p-8">
             <HeaderProfile />
-            <div class="bg-white rounded-3xl mt-6 overflow-hidden shadow">
+            <div class="bg-white rounded-3xl mt-6 overflow-hidden shadow-sm">
                 <div class="p-4 md:p-8">
                     <Image />
                     <General />

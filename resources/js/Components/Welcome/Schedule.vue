@@ -32,10 +32,10 @@ const schedules = [
     <div
       v-for="(r, i) in schedules"
       :key="i"
-      class="flex items-center gap-3 p-2.5 bg-white rounded-lg border border-slate-100 shadow-sm">
+      class="flex items-center gap-3 p-2.5 bg-white rounded-lg border border-slate-100 shadow-xs">
 
       <div
-        class="w-2 h-8 rounded-full bg-gradient-to-b from-indigo-500 to-sky-400 shrink-0" />
+        class="w-2 h-8 rounded-full bg-linear-to-b from-indigo-500 to-sky-400 shrink-0" />
 
       <div class="flex-1 min-w-0">
         <p
