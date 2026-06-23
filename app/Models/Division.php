@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['level_id', 'name', 'slug'])]
+#[Fillable(['level_id', 'name', 'slug', 'hexa'])]
 class Division extends Model
 {
     /** @use HasFactory<\Database\Factories\DivisionFactory> */

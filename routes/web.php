@@ -14,17 +14,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 //SUPER ADMIN
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/priority-first/dashboard', [RoutingPriority1Controller::class, 'dashboard'])->name('super.admin.dashboard');
-    Route::get('/priority-first/user', [RoutingPriority1Controller::class, 'user'])->name('super.admin.user');
+Route::middleware(['auth', 'verified'])->prefix('priority-first')->group(function () {
+    Route::get('/dashboard', [RoutingPriority1Controller::class, 'dashboard'])->name('super.admin.dashboard');
+    Route::get('/user', [RoutingPriority1Controller::class, 'user'])->name('super.admin.user');
 
     //
-    Route::get('/priority-first/division', [RoutingPriority1Controller::class, 'division'])->name('super.admin.division');
-    Route::get('/priority-first/permission', [RoutingPriority1Controller::class, 'permission'])->name('super.admin.permission');
+    Route::get('/division', [RoutingPriority1Controller::class, 'division'])->name('super.admin.division');
+    Route::get('/permission', [RoutingPriority1Controller::class, 'permission'])->name('super.admin.permission');
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/change-password', [ProfileController::class, 'changepassword'])->name('profile.changepassword');
     //Route::patch('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
     //Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });

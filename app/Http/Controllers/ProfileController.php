@@ -18,10 +18,25 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): Response
     {
-        return Inertia::render('Profile/Edit', [
-            'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
-            'status' => session('status'),
-        ]);
+        $user = Auth::user();
+        if ($user->division->level->level == 1) {
+            return Inertia::render('Admin/profile/Edit', [
+                'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
+                'status' => session('status'),
+            ]);
+        } elseif ($user->division->level->level == 2) {
+        } else {
+        }
+    }
+
+    public function changepassword()
+    {
+        $user = Auth::user();
+        if ($user->division->level->level == 1) {
+            return Inertia::render('Admin/profile/Changepassword');
+        } elseif ($user->division->level->level == 2) {
+        } else {
+        }
     }
 
     /**

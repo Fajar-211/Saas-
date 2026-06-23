@@ -9,7 +9,7 @@ const dateNow = timeNow();
 <template>
     <div class="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
         <div>
-            <h1 class="text-xl font-semibold">
+            <h1 class="text-xl font-semibold font-second">
                 Welcome, {{ user.first_name }}
             </h1>
 

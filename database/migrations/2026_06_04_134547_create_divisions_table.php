@@ -19,6 +19,7 @@ return new class extends Migration
             );
             $table->string('name')->unique();
             $table->string('slug');
+            $table->string('hexa')->unique();
             $table->timestamps();
         });
     }

@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
-class ProfileController extends Controller
+class CrudProfileController extends Controller
 {
     public function update(Request $request)
     {
@@ -41,5 +41,10 @@ class ProfileController extends Controller
             'address' => $valid['address'],
         ]);
         return response()->json(['message' => 'succes']);
+    }
+
+    public function image()
+    {
+        return response()->json(['message' => 'success']);
     }
 }

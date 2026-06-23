@@ -28,11 +28,12 @@ class DatabaseSeeder extends Seeder
             if ($i == 1) {
                 $d = $p->divisions()->create([
                     'name' => $name,
-                    'slug' => Str::slug($name)
+                    'slug' => Str::slug($name),
+                    'hexa' => '#9966ff'
                 ]);
                 $d->user()->create([
                     'first_name' => 'SUPER ADMIN',
-                    'email' => 'superadmin@example.com',
+                    'email' => '21102183@ittelkom-pwt.ac.id',
                     'email_verified_at' => now(),
                     'password' => Hash::make('password')
                 ]);
@@ -40,7 +41,8 @@ class DatabaseSeeder extends Seeder
                 $name = 'Supervisor';
                 $d = $p->divisions()->create([
                     'name' => $name,
-                    'slug' => Str::slug($name)
+                    'slug' => Str::slug($name),
+                    'hexa' => '#4bc0c0'
                 ]);
                 $d->user()->create([
                     'first_name' => 'SUPERVISOR 1',
@@ -58,7 +60,8 @@ class DatabaseSeeder extends Seeder
                 $name = 'Reservation';
                 $d = $p->divisions()->create([
                     'name' => $name,
-                    'slug' => Str::slug($name)
+                    'slug' => Str::slug($name),
+                    'hexa' => '#ffcd56'
                 ]);
                 $d->user()->create([
                     'first_name' => 'Toni',
@@ -76,7 +79,8 @@ class DatabaseSeeder extends Seeder
                 $name = 'Kitchen';
                 $d = $p->divisions()->create([
                     'name' => $name,
-                    'slug' => Str::slug($name)
+                    'slug' => Str::slug($name),
+                    'hexa' => '#36a2eb'
                 ]);
                 $d->user()->create([
                     'first_name' => 'Lena',
@@ -88,7 +92,8 @@ class DatabaseSeeder extends Seeder
                 $name = 'Host';
                 $d = $p->divisions()->create([
                     'name' => $name,
-                    'slug' => Str::slug($name)
+                    'slug' => Str::slug($name),
+                    'hexa' => '#ff6384'
                 ]);
                 $d->user()->create([
                     'first_name' => 'Latif',

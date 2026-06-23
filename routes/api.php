@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\api\AuthController;
-use App\Http\Controllers\api\ProfileController;
+use App\Http\Controllers\api\CrudProfileController;
+use App\Http\Controllers\api\OtpController;
 use App\Http\Controllers\api\SuperAdmin\Master\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -13,7 +14,9 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
-    Route::patch('/profile/update', [ProfileController::class, 'update']);
+    Route::patch('/profile/update', [CrudProfileController::class, 'update']);
+    Route::patch('/profile/image', [CrudProfileController::class, 'image']);
+    Route::get('/change-pass', [OtpController::class, 'sendforchangepass']);
 });
 
 //Super Admin

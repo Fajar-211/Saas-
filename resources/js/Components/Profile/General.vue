@@ -30,8 +30,8 @@ const submit = async () => {
 </script>
 
 <template>
-    <form @submit.prevent="submit">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
+    <form @submit.prevent="submit" class="p-4 md:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
                 <div>
                     <InputLabel>
@@ -104,10 +104,24 @@ const submit = async () => {
 
                 <div>
                     <InputLabel>
+                        Email
+                    </InputLabel>
+                    <TextInput
+                        type="email"
+                        class="my-1 mx-2 block w-full rounded-md border-gray-300 shadow-xs focus:border-indigo-500 focus:ring-indigo-500"
+                        v-model="form.middle_name"
+                        autocomplete="email"
+                        placeholder="Enter your email address"
+                    />
+                    <InputError class="mt-2" :message="errors?.email?.[0]" />
+                </div>
+
+                <div>
+                    <InputLabel>
                         Phone
                     </InputLabel>
-                    <div class="flex my-1 w-full">
-                        <div class="my-1 mx-2 rounded-md border-gray-300 flex items-center justify-center">
+                    <div class="flex w-full">
+                        <div class="my-1 mr-2 rounded-md border-gray-300 flex items-center justify-center">
                             <span>
                                 +62
                             </span>
@@ -133,8 +147,16 @@ const submit = async () => {
             </div>
             
         </div>
-        <button type="submit" :disabled="loading" :class="[loading ? 'cursor-not-allowed opacity-50' : 'cursor-pointer opacity-100', 'bg-blue-500 text-white px-5 py-2 rounded-full w-full my-2 hover:bg-blue-600 transition-all duration-200']">
-            {{ loading ? 'Saving' : 'Edit' }}
+        <button type="submit" :disabled="loading" :class="[loading ? 'cursor-not-allowed opacity-50' : 'cursor-pointer opacity-100', 'bg-blue-500 text-white px-5 py-2 font-second rounded-lg w-full my-2 flex items-center justify-center hover:bg-blue-600 transition-all duration-200']">
+            <svg v-show="!loading" class="fill-current mx-2.5" width="15px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+            <path d="M37.1,4v13.6c0,1-0.8,1.9-1.9,1.9H13.9c-1,0-1.9-0.8-1.9-1.9V4H8C5.8,4,4,5.8,4,8v36c0,2.2,1.8,4,4,4h36
+                c2.2,0,4-1.8,4-4V11.2L40.8,4H37.1z M44.1,42.1c0,1-0.8,1.9-1.9,1.9H9.9c-1,0-1.9-0.8-1.9-1.9V25.4c0-1,0.8-1.9,1.9-1.9h32.3
+                c1,0,1.9,0.8,1.9,1.9V42.1z"/>
+            <g>
+                <path d="M24.8,13.6c0,1,0.8,1.9,1.9,1.9h4.6c1,0,1.9-0.8,1.9-1.9V4h-8.3L24.8,13.6L24.8,13.6z"/>
+            </g>
+            </svg>
+            {{ loading ? 'Saving' : 'Edit Profile' }}
         </button>
     </form>
 </template>
