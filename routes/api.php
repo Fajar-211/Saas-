@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::middleware(['auth:sanctum'])->group(function () {
+Route::middleware(['auth:sanctum', 'activity'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::patch('/profile/update', [CrudProfileController::class, 'update']);
@@ -20,7 +20,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 
 //Super Admin
-Route::middleware(['auth:sanctum', 'super_admin'])->group(function () {
+Route::middleware(['auth:sanctum', 'activity', 'super_admin'])->prefix('priority-first')->group(function () {
     //Route USER
-    Route::get('/priority-first/users', [UsersController::class, 'index']);
+    Route::get('/users', [UsersController::class, 'index']);
 });

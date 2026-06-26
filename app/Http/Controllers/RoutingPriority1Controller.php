@@ -26,6 +26,24 @@ class RoutingPriority1Controller extends Controller
             ];
         });
         $users = User::query()->count();
-        return Inertia::render('Admin/User', ['divisions' => $result, 'users' => $users]);
+        $online = User::where('last_activity', '>=', now()->subMinute(5))->count();
+        return Inertia::render('Admin/User', ['divisions' => $result, 'users' => $users, 'online' => $online]);
+    }
+    public function division()
+    {
+        $totaluser = User::query()->get()->count();
+        $divisi = Division::query();
+        $totaldivisi = $divisi->get()->count();
+        $divisions = $divisi->with(['user'])->get();
+        $result = $divisions->map(function ($division) {
+            return [
+                'name' => $division->name,
+                'description' => $division->description,
+                'hexa' => $division->hexa,
+                'member' => $division->user()->count(),
+                'users' => $division->user()->count() >= 5 ? $division->user->take(5) : $division->user
+            ];
+        });
+        return Inertia::render('Admin/Division', ['divisions' => $result, 'Totaluser' => $totaluser, 'Totaldivisi' => $totaldivisi]);
     }
 }

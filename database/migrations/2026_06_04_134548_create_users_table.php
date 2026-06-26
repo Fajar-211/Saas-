@@ -28,6 +28,7 @@ return new class extends Migration
             $table->date('birthday')->nullable();
             $table->text('address')->nullable();
             $table->text('profile')->nullable();
+            $table->timestamp('last_activity')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

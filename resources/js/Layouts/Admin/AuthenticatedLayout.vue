@@ -35,7 +35,6 @@ const handleDocumentClick = (event) => {
 };
 
 onMounted(() => {
-    console.log(nav.layout);
     document.addEventListener('click', handleDocumentClick);
 });
 watch(
@@ -46,9 +45,6 @@ watch(
         }
     }
 )
-watch(() => nav.layout, (val) => {
-    console.log('layout berubah:', val)
-})
 </script>
 
 <template>

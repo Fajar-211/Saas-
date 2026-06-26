@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
                 $d = $p->divisions()->create([
                     'name' => $name,
                     'slug' => Str::slug($name),
+                    'description' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
                     'hexa' => '#9966ff'
                 ]);
                 $d->user()->create([
@@ -42,6 +43,7 @@ class DatabaseSeeder extends Seeder
                 $d = $p->divisions()->create([
                     'name' => $name,
                     'slug' => Str::slug($name),
+                    'description' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
                     'hexa' => '#4bc0c0'
                 ]);
                 $d->user()->create([
@@ -61,6 +63,7 @@ class DatabaseSeeder extends Seeder
                 $d = $p->divisions()->create([
                     'name' => $name,
                     'slug' => Str::slug($name),
+                    'description' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
                     'hexa' => '#ffcd56'
                 ]);
                 $d->user()->create([
@@ -80,6 +83,7 @@ class DatabaseSeeder extends Seeder
                 $d = $p->divisions()->create([
                     'name' => $name,
                     'slug' => Str::slug($name),
+                    'description' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
                     'hexa' => '#36a2eb'
                 ]);
                 $d->user()->create([
@@ -93,6 +97,7 @@ class DatabaseSeeder extends Seeder
                 $d = $p->divisions()->create([
                     'name' => $name,
                     'slug' => Str::slug($name),
+                    'description' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
                     'hexa' => '#ff6384'
                 ]);
                 $d->user()->create([

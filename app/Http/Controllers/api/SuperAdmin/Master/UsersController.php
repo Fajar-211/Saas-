@@ -12,9 +12,19 @@ class UsersController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::with(['division'])->paginate(10)->withQueryString();
+        $users = User::query();
+        if ($request->filled('search')) {
+            $users->where('first_name', 'like', '%' . $request->search . '%');
+        }
+        if ($request->filled('filter')) {
+            $divisi = $request->filter;
+            $users->whereHas('division', function ($query) use ($divisi) {
+                $query->where('name', '=', $divisi);
+            });
+        }
+        $users = $users->paginate(5)->withQueryString();
         return GetUsersResource::collection($users);
     }
 

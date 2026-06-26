@@ -19,6 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->statefulApi();
         $middleware->alias([
             'super_admin' => \App\Http\Middleware\superadmin::class,
+            'activity' => \App\Http\Middleware\UpdateActivity::class
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

@@ -46,7 +46,6 @@ const handlcloseOTP = ()=>{
         <Transition name="fold" :duration="{enter:0, leave:400}">
             <Otp v-if="modalOTP" @close="handlcloseOTP" />
         </Transition>
-        <ChangePass />
     </AuthenticatedLayout>
 </template>
 
