@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
                 ]);
                 $d->user()->create([
                     'first_name' => 'SUPER ADMIN',
-                    'email' => '21102183@ittelkom-pwt.ac.id',
+                    'email' => 'fajarstn21@gmail.com',
                     'email_verified_at' => now(),
                     'password' => Hash::make('password')
                 ]);

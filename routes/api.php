@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/forget-password', [AuthController::class, 'forget']);
+Route::patch('/change-password', [AuthController::class, 'changepas']);
 
 Route::middleware(['auth:sanctum', 'activity'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);

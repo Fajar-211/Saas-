@@ -7,7 +7,8 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import { onMounted, ref } from 'vue';
-
+import TokenPass from '@/Components/TokenPass.vue';
+import { eror } from '@/Helper/Toast';
 defineProps({
     canResetPassword: {
         type: Boolean,
@@ -32,11 +33,20 @@ const submit = () => {
 const bounce = ref(false);
 const top = ref(false);
 const btn = ref(false);
+const openmodal = ref(false);
 onMounted(()=>{
     bounce.value = true
     top.value = true;
     btn.value = true;
 })
+
+function handleemailerror({message, code}){
+    eror(code, message)
+    openmodal.value = false;
+}
+function handleemailclose(){
+    openmodal.value = false
+}
 </script>
 
 <template>
@@ -104,12 +114,11 @@ onMounted(()=>{
                             >Remember me</span
                         >
                     </label>
-                    <Link data-aos="fade-right" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" v-if="canResetPassword"
-                        :href="route('password.request')"
+                    <button type="button" @click="openmodal = true" data-aos="fade-right" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" v-if="canResetPassword"
                         class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
                         Forgot your password?
-                    </Link>
+                    </button>
                 </div>
 
                 <div class="mt-4 flex items-center justify-between">
@@ -121,6 +130,7 @@ onMounted(()=>{
                 </div>
             </form>
         </div>
+        <TokenPass v-if="openmodal" @error="handleemailerror" @close="handleemailclose" />
     </GuestLayout>
 </template>
 
@@ -183,5 +193,30 @@ onMounted(()=>{
 .btn-aos-enter-to {
   opacity: 1;
   transform: translateY(0) scale(1) rotateX(0);
+}
+
+.fold-enter-active,
+.fold-leave-active {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fold-enter-from {
+    opacity: 0;
+    transform: scaleY(0);
+}
+
+.fold-enter-to {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.fold-leave-from {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.fold-leave-to {
+    opacity: 0;
+    transform: scaleY(0);
 }
 </style>
